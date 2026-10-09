@@ -21,6 +21,8 @@
     var ico=card.querySelector('.ico'),h=card.querySelector('h3'),w=card.querySelector('.when'),p=card.querySelector('p:not(.when)'),m=card.querySelector('.metric');
     var cats=(card.getAttribute('data-cat')||'').split(' ').filter(Boolean);
     var html=(ico?ico.outerHTML:'')+'<h3 id="detalle-titulo">'+h.innerHTML+'</h3><p class="when">'+w.innerHTML+'</p><p class="full">'+p.innerHTML+'</p>';
+    var sk=(card.getAttribute('data-skills')||'').split('|').filter(Boolean);
+    if(sk.length) html+='<h4 class="sk-t">Habilidades</h4><ul class="sk">'+sk.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>';
     if(m) html+='<div class="metric">'+m.innerHTML+'</div>';
     html+='<div class="chips">'+cats.map(function(c){return '<span class="chip">'+(labels[c]||c)+'</span>'}).join('')+'</div>';
     body.innerHTML=html;
