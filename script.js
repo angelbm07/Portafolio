@@ -1,4 +1,5 @@
 (function(){
+  var labels={sensores:'Sensores',nanomedicina:'Nanomedicina y fármacos',procesos:'Procesos y agua',materiales:'Materiales',computacional:'Computacional'};
   var buttons=document.querySelectorAll('.filters button');
   var cards=document.querySelectorAll('#proyectos .card');
   buttons.forEach(function(b){
@@ -11,4 +12,29 @@
       });
     });
   });
+
+  var dlg=document.getElementById('detalle');
+  var body=document.getElementById('detalle-cuerpo');
+  var last=null;
+  function open(card){
+    last=card;
+    var ico=card.querySelector('.ico'),h=card.querySelector('h3'),w=card.querySelector('.when'),p=card.querySelector('p:not(.when)'),m=card.querySelector('.metric');
+    var cats=(card.getAttribute('data-cat')||'').split(' ').filter(Boolean);
+    var html=(ico?ico.outerHTML:'')+'<h3 id="detalle-titulo">'+h.innerHTML+'</h3><p class="when">'+w.innerHTML+'</p><p class="full">'+p.innerHTML+'</p>';
+    if(m) html+='<div class="metric">'+m.innerHTML+'</div>';
+    html+='<div class="chips">'+cats.map(function(c){return '<span class="chip">'+(labels[c]||c)+'</span>'}).join('')+'</div>';
+    body.innerHTML=html;
+    if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','')}
+  }
+  cards.forEach(function(c){
+    c.setAttribute('tabindex','0');
+    c.setAttribute('role','button');
+    c.setAttribute('aria-haspopup','dialog');
+    var more=document.createElement('span');more.className='more';more.textContent='Ver detalle →';c.appendChild(more);
+    c.addEventListener('click',function(){open(c)});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(c)}});
+  });
+  dlg.querySelector('.close').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  dlg.addEventListener('close',function(){if(last)last.focus()});
 })();

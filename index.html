@@ -136,32 +136,7 @@
 
 <section id="proyectos">
   <h2>Proyectos</h2>
-  <p class="note">Dieciséis proyectos de licenciatura entre 2023 y 2025. Las cifras vienen de los reportes y descripciones del propio autor.</p>
-  <figure class="fig">
-    <svg viewBox="0 0 640 190" role="img" aria-labelledby="fig-t fig-d">
-      <title id="fig-t">Límite de detección de tres sensores, en escala logarítmica</title>
-      <desc id="fig-d">Glucosa 14.9 µM, cadmio 0.20 µM y mercurio 0.188 µM, en un eje de 0.1 a 100 µM.</desc>
-      <g>
-        <line class="grid" x1="200" y1="14" x2="200" y2="140"/><line class="grid" x1="320" y1="14" x2="320" y2="140"/>
-        <line class="grid" x1="440" y1="14" x2="440" y2="140"/><line class="grid" x1="560" y1="14" x2="560" y2="140"/>
-        <text x="200" y="160" text-anchor="middle">0.1</text><text x="320" y="160" text-anchor="middle">1</text>
-        <text x="440" y="160" text-anchor="middle">10</text><text x="560" y="160" text-anchor="middle">100</text>
-        <text x="380" y="182" text-anchor="middle">Límite de detección (µM, escala log)</text>
-      </g>
-      <g>
-        <text class="lbl" x="188" y="39" text-anchor="end">Glucosa (Cu₂O/CPE)</text>
-        <rect class="bar" x="200" y="24" width="260.8" height="22"/>
-        <text class="val" x="469" y="40">14.9</text>
-        <text class="lbl" x="188" y="85" text-anchor="end">Cd²⁺ (µPAD)</text>
-        <rect class="bar" x="200" y="70" width="36.1" height="22"/>
-        <text class="val" x="244" y="86">0.20</text>
-        <text class="lbl" x="188" y="131" text-anchor="end">Hg²⁺ (µPAD)</text>
-        <rect class="bar" x="200" y="116" width="32.9" height="22"/>
-        <text class="val" x="241" y="132">0.188</text>
-      </g>
-    </svg>
-    <figcaption>Límites de detección de los sensores con resultados cuantificados. La escala es logarítmica porque los analitos y los métodos son distintos; la gráfica compara órdenes de magnitud, no desempeño entre métodos.</figcaption>
-  </figure>
+  <p class="note">Dieciséis proyectos de licenciatura entre 2023 y 2025. Las cifras vienen de los reportes y descripciones del propio autor. Haz clic en un proyecto para verlo completo.</p>
   <div class="filters" role="group" aria-label="Filtrar proyectos">
     <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
     <button type="button" data-filter="sensores" aria-pressed="false">Sensores</button>
@@ -434,6 +409,10 @@
     <p>Contacto por <a href="https://www.linkedin.com/in/angeluis-barretomu%C3%B1oz/" target="_blank" rel="noopener">LinkedIn</a>. Actualizado en octubre de 2026.</p>
   </div>
 </footer>
+<dialog id="detalle" aria-labelledby="detalle-titulo">
+  <button type="button" class="close" aria-label="Cerrar">Cerrar ✕</button>
+  <div id="detalle-cuerpo"></div>
+</dialog>
 <script src="script.js"></script>
 </body>
 </html>
