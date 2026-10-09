@@ -25,6 +25,7 @@
     if(sk.length) html+='<h4 class="sk-t">Habilidades</h4><div class="chips sk">'+sk.map(function(x){return '<span class="chip">'+x+'</span>'}).join('')+'</div>';
     if(m) html+='<div class="metric">'+m.innerHTML+'</div>';
     html+='<p class="area">Área: '+cats.map(function(c){return labels[c]||c}).join(' · ')+'</p>';
+    var cs=getComputedStyle(card);['--c','--cs','--ci'].forEach(function(k){dlg.style.setProperty(k,cs.getPropertyValue(k))});
     body.innerHTML=html;
     if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','')}
   }
@@ -39,4 +40,18 @@
   dlg.querySelector('.close').addEventListener('click',function(){dlg.close()});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
   dlg.addEventListener('close',function(){if(last)last.focus()});
+})();
+
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window)) return;
+  var links={};document.querySelectorAll('nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  var navIO=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===e.target.id)})}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('header.hero,section').forEach(function(s){navIO.observe(s)});
+  if(reduce) return;
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+  document.querySelectorAll('.entry,.skills>div,section h2,.tablewrap').forEach(function(el){el.classList.add('rv');io.observe(el)});
 })();

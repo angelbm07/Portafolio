@@ -86,3 +86,55 @@ dialog .chips{margin-top:0}
 dialog .sk-t{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 8px}
 dialog .sk{margin:0 0 18px}
 dialog .area{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0}
+
+/* ---- Color y textura ---- */
+body{background-image:radial-gradient(rgba(47,50,176,.11) 1px,transparent 1.5px);background-size:22px 22px}
+header.hero{background:radial-gradient(circle at 88% 12%,rgba(200,245,96,.22),transparent 38%),linear-gradient(120deg,#24267D 0%,#3A2FA8 55%,#5B34C9 100%);position:relative}
+header.hero::before{content:"";position:absolute;inset:0;background:url(assets/lattice.svg) right center/cover no-repeat;pointer-events:none}
+header.hero>*{position:relative}
+.s-indigo{--sec:#2F32B0;--sec-soft:#E6E8FA;--sec-ink:#1F2280}
+.s-violet{--sec:#7A4DFF;--sec-soft:#EEE8FF;--sec-ink:#3B1FA8}
+.s-teal{--sec:#0E9AA0;--sec-soft:#D9F3F3;--sec-ink:#08595D}
+.s-magenta{--sec:#D1348F;--sec-soft:#FBE3F1;--sec-ink:#8A1B5C}
+.s-amber{--sec:#E39A0B;--sec-soft:#FFF0CF;--sec-ink:#7A4E00}
+.s-lime{--sec:#6FA10F;--sec-soft:#EEF9CF;--sec-ink:#3F5A00}
+section h2{display:flex;align-items:center;gap:12px}
+section h2::before{content:"";flex:none;width:18px;height:20px;background:var(--sec);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.entry{border-top:2px solid color-mix(in srgb,var(--sec) 38%,var(--line))}
+.entry .when{color:var(--sec-ink);font-weight:500}
+.entry li::marker{color:var(--sec)}
+.chip{background:var(--sec-soft);color:var(--sec-ink);border:1px solid color-mix(in srgb,var(--sec) 45%,transparent)}
+th{color:var(--sec-ink);border-bottom:2px solid var(--sec)}
+td.h{color:var(--sec-ink);font-weight:500}
+tbody tr:hover td{background:var(--sec-soft)}
+.card[data-cat^="sensores"]{--c:#2F32B0;--cs:#E6E8FA;--ci:#1F2280}
+.card[data-cat^="nanomedicina"]{--c:#D1348F;--cs:#FBE3F1;--ci:#8A1B5C}
+.card[data-cat^="procesos"]{--c:#0E9AA0;--cs:#D9F3F3;--ci:#08595D}
+.card[data-cat^="materiales"]{--c:#E39A0B;--cs:#FFF0CF;--ci:#7A4E00}
+.card[data-cat^="computacional"]{--c:#7A4DFF;--cs:#EEE8FF;--ci:#3B1FA8}
+.card{border-top:4px solid var(--c);animation:pop .35s ease both;transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 12px 24px -12px color-mix(in srgb,var(--c) 55%,transparent);border-color:var(--c)}
+.card .ico{color:var(--c)}
+.card .metric{color:var(--ci)}
+.card .more{color:var(--c);font-weight:500}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.filters button{transition:background .15s,color .15s}
+.filters button[data-filter="sensores"][aria-pressed="true"]{background:#2F32B0;border-color:#2F32B0;color:#fff}
+.filters button[data-filter="nanomedicina"][aria-pressed="true"]{background:#D1348F;border-color:#D1348F;color:#fff}
+.filters button[data-filter="procesos"][aria-pressed="true"]{background:#0E9AA0;border-color:#0E9AA0;color:#fff}
+.filters button[data-filter="materiales"][aria-pressed="true"]{background:#E39A0B;border-color:#E39A0B;color:#12133A}
+.filters button[data-filter="computacional"][aria-pressed="true"]{background:#7A4DFF;border-color:#7A4DFF;color:#fff}
+dialog{border-top:6px solid var(--c,var(--accent))}
+dialog[open]{animation:pop .22s ease}
+dialog .ico{color:var(--c,var(--accent))}
+dialog .chip{background:var(--cs,var(--accent-soft));color:var(--ci,var(--fg));border:1px solid var(--c,var(--accent))}
+dialog .metric{color:var(--ci,var(--accent))}
+nav a{transition:background .15s,color .15s}
+nav a.on{color:var(--accent);background:var(--accent-soft);font-weight:500}
+.skills>div{padding:14px 16px;background:var(--surface);border-left:4px solid var(--sec)}
+.skills>div:nth-child(5n+1){border-color:#2F32B0}.skills>div:nth-child(5n+2){border-color:#D1348F}.skills>div:nth-child(5n+3){border-color:#0E9AA0}.skills>div:nth-child(5n+4){border-color:#7A4DFF}.skills>div:nth-child(5n+5){border-color:#E39A0B}
+footer{background:linear-gradient(120deg,#24267D,#5B34C9);color:var(--hero-muted);border-top:0}
+footer a{color:var(--lime)}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.card{animation:none}.js .rv{opacity:1;transform:none;transition:none}.card:hover{transform:none}}
