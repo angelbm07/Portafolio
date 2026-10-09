@@ -8,12 +8,6 @@
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0C0D22; --surface:#14163A; --fg:#E9EBFF; --muted:#A3A7CF; --line:#272A55;
-  --accent:#A9ADFF; --accent-soft:#1B1E4D; --hero-bg:#171A62; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0C0D22; --surface:#14163A; --fg:#E9EBFF; --muted:#A3A7CF; --line:#272A55;
-  --accent:#A9ADFF; --accent-soft:#1B1E4D; --hero-bg:#171A62; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
