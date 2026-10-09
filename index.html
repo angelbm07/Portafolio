@@ -14,6 +14,14 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="i-sensores" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h6l3-9 5 17 4-12 2 4h8"/></symbol>
+<symbol id="i-nanomedicina" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="5"/><path d="M16 5v6M16 21v6M5 16h6M21 16h6"/></symbol>
+<symbol id="i-procesos" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3h8M14 3v8L6 25a3 3 0 0 0 2.6 4.5h14.8A3 3 0 0 0 26 25l-8-14V3"/><path d="M9.5 21h13"/></symbol>
+<symbol id="i-materiales" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l11 6.5v13L16 29 5 22.5v-13z"/><path d="M16 3v26M5 9.5l22 13M27 9.5l-22 13" opacity=".45"/></symbol>
+<symbol id="i-computacional" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="16" rx="13" ry="5.5"/><ellipse cx="16" cy="16" rx="13" ry="5.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="13" ry="5.5" transform="rotate(120 16 16)"/><circle cx="16" cy="16" r="2" fill="currentColor"/></symbol>
+</defs></svg>
 <nav aria-label="Secciones">
   <div class="wrap">
     <a href="#inicio">Inicio</a>
@@ -130,6 +138,31 @@
 <section id="proyectos">
   <h2>Proyectos</h2>
   <p class="note">Dieciséis proyectos de licenciatura entre 2023 y 2025. Las cifras vienen de los reportes y descripciones del propio autor.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 640 190" role="img" aria-labelledby="fig-t fig-d">
+      <title id="fig-t">Límite de detección de tres sensores, en escala logarítmica</title>
+      <desc id="fig-d">Glucosa 14.9 µM, cadmio 0.20 µM y mercurio 0.188 µM, en un eje de 0.1 a 100 µM.</desc>
+      <g>
+        <line class="grid" x1="200" y1="14" x2="200" y2="140"/><line class="grid" x1="320" y1="14" x2="320" y2="140"/>
+        <line class="grid" x1="440" y1="14" x2="440" y2="140"/><line class="grid" x1="560" y1="14" x2="560" y2="140"/>
+        <text x="200" y="160" text-anchor="middle">0.1</text><text x="320" y="160" text-anchor="middle">1</text>
+        <text x="440" y="160" text-anchor="middle">10</text><text x="560" y="160" text-anchor="middle">100</text>
+        <text x="380" y="182" text-anchor="middle">Límite de detección (µM, escala log)</text>
+      </g>
+      <g>
+        <text class="lbl" x="188" y="39" text-anchor="end">Glucosa (Cu₂O/CPE)</text>
+        <rect class="bar" x="200" y="24" width="260.8" height="22"/>
+        <text class="val" x="469" y="40">14.9</text>
+        <text class="lbl" x="188" y="85" text-anchor="end">Cd²⁺ (µPAD)</text>
+        <rect class="bar" x="200" y="70" width="36.1" height="22"/>
+        <text class="val" x="244" y="86">0.20</text>
+        <text class="lbl" x="188" y="131" text-anchor="end">Hg²⁺ (µPAD)</text>
+        <rect class="bar" x="200" y="116" width="32.9" height="22"/>
+        <text class="val" x="241" y="132">0.188</text>
+      </g>
+    </svg>
+    <figcaption>Límites de detección de los sensores con resultados cuantificados. La escala es logarítmica porque los analitos y los métodos son distintos; la gráfica compara órdenes de magnitud, no desempeño entre métodos.</figcaption>
+  </figure>
   <div class="filters" role="group" aria-label="Filtrar proyectos">
     <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
     <button type="button" data-filter="sensores" aria-pressed="false">Sensores</button>
@@ -138,91 +171,107 @@
     <button type="button" data-filter="materiales" aria-pressed="false">Materiales</button>
     <button type="button" data-filter="computacional" aria-pressed="false">Computacional</button>
   </div>
-  <div class="grid">
+  <div class="cards">
     <article class="card" data-cat="sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-sensores"/></svg>
       <h3>Sensor electroquímico no enzimático de glucosa con Cu y Ni</h3>
       <p class="when">may – jun 2025</p>
       <p>Electrodos de pasta de carbono modificados con Cu₂O, Ni(OH)₂ y CuO-lactato, con electrodepósito por cronoamperometría y caracterización por voltamperometría cíclica en medio alcalino. Se evaluaron además aspectos técnicos, regulatorios, de seguridad y de manejo de residuos.</p>
       <div class="metric">LOD 14.9 µM · corriente anódica hasta 20× sobre el blanco</div>
     </article>
     <article class="card" data-cat="sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-sensores"/></svg>
       <h3>µPAD portátil para cadmio y mercurio en agua</h3>
       <p class="when">may – jun 2025</p>
       <p>Papel Whatman con quitosano y puntos cuánticos de carbono dopados con nitrógeno, con detección por apagamiento de fluorescencia y cuantificación posible con smartphone. Incluye factibilidad técnica y económica.</p>
       <div class="metric">LOD 0.20 µM (Cd²⁺) y 0.188 µM (Hg²⁺) · menos de MXN $0.50 por unidad</div>
     </article>
     <article class="card" data-cat="sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-sensores"/></svg>
       <h3>Metales pesados en alimentos mexicanos con S@N-CQDs</h3>
       <p class="when">mar – may 2025</p>
       <p>Sensor óptico con puntos cuánticos de carbono dopados con nitrógeno y funcionalizados con azufre para detectar Pb²⁺, Hg²⁺ y Cd²⁺ en hortalizas y cereales mexicanos.</p>
       <div class="metric">Expositor seleccionado, 25ª Expo Ingenierías (jun 2025)</div>
     </article>
     <article class="card" data-cat="procesos">
+      <svg class="ico" aria-hidden="true"><use href="#i-procesos"/></svg>
       <h3>Filtración portátil de 50 L con nanopartículas de CuO</h3>
       <p class="when">feb – mar 2025</p>
       <p>Concepto para comunidades rurales y zonas de desastre. Design Thinking, revisión de normativa de calidad del agua, proceso de precipitación y calcinación de nanopartículas de CuO, balances de materia y energía, selección de equipo y rentabilidad.</p>
       <div class="metric">Sistema de 50 L · escalamiento y costos</div>
     </article>
     <article class="card" data-cat="computacional materiales">
+      <svg class="ico" aria-hidden="true"><use href="#i-computacional"/></svg>
       <h3>Densidad de nanopartículas de oro por teoría de Mie</h3>
       <p class="when">nov – dic 2024</p>
       <p>Determinación de la densidad de nanopartículas de oro en dispersión mediante teoría de Mie.</p>
     </article>
     <article class="card" data-cat="computacional materiales">
+      <svg class="ico" aria-hidden="true"><use href="#i-computacional"/></svg>
       <h3>Sensibilizadores D-π-A de trifenilamina para celdas DSSC</h3>
       <p class="when">ago – dic 2024</p>
       <p>Modelación de seis sensibilizadores con DFT y TD-DFT en ORCA (PBE, def2-SVP) y estructuras en Avogadro. Análisis de espectros UV-Vis simulados, niveles HOMO–LUMO, band gaps y eficiencia de captación de luz. La estructura F-CA resultó la candidata más prometedora.</p>
       <div class="metric">6 sensibilizadores modelados</div>
     </article>
     <article class="card" data-cat="computacional sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-computacional"/></svg>
       <h3>Postes de PDMS contra el calentamiento Joule en microfluídica</h3>
       <p class="when">ago – dic 2024</p>
       <p>Estudio de geometrías de postes de PDMS para reducir el efecto de calentamiento Joule en dispositivos microfluídicos, con simulación de transferencia de calor.</p>
     </article>
     <article class="card" data-cat="materiales procesos">
+      <svg class="ico" aria-hidden="true"><use href="#i-materiales"/></svg>
       <h3>NanoShield: recubrimiento de óxido de grafeno</h3>
       <p class="when">oct 2024</p>
       <p>Recubrimiento conceptual base agua con óxido de grafeno en matriz epóxica para regulación térmica en aplicaciones automotrices. Formulación, flujo de manufactura, control de calidad, normativa y Business Model Canvas para talleres y flotillas.</p>
     </article>
     <article class="card" data-cat="nanomedicina">
+      <svg class="ico" aria-hidden="true"><use href="#i-nanomedicina"/></svg>
       <h3>Nanotecnología contra el osteosarcoma</h3>
       <p class="when">sep – oct 2024</p>
       <p>Comparación de terapia fototérmica con nanopartículas de oro, doxorrubicina liposomal, micelas poliméricas, dendrímeros, hipertermia magnética y plataformas teranósticas: mecanismos, límites y retos de comercialización.</p>
       <div class="metric">6 estrategias comparadas</div>
     </article>
     <article class="card" data-cat="computacional materiales">
+      <svg class="ico" aria-hidden="true"><use href="#i-computacional"/></svg>
       <h3>Modelo de Tight Binding para estructuras de banda</h3>
       <p class="when">ago – sep 2024</p>
       <p>Cálculo de estructuras de banda con el modelo de Tight Binding.</p>
     </article>
     <article class="card" data-cat="nanomedicina materiales">
+      <svg class="ico" aria-hidden="true"><use href="#i-nanomedicina"/></svg>
       <h3>Co-cristal diclofenaco–L-prolina</h3>
       <p class="when">may – jun 2024</p>
       <p>Síntesis y caracterización por XRD, DSC y FTIR (punto de fusión de 153.70 °C, puentes de hidrógeno entre principio activo y co-formador). El co-cristal resultó menos soluble que el diclofenaco hidrolizado, y se identificó la evaporación del solvente como la variable a optimizar.</p>
       <div class="metric">0.0100 vs 0.0275 mg/mL · estudio experimental de 5 semanas</div>
     </article>
     <article class="card" data-cat="materiales">
+      <svg class="ico" aria-hidden="true"><use href="#i-materiales"/></svg>
       <h3>Recubrimiento fotocurable de tioles para modelos 3D</h3>
       <p class="when">mar – jun 2024</p>
       <p>Reto de curso sobre las limitaciones de los fantomas vasculares impresos en 3D (elasticidad, transparencia, durabilidad, rugosidad y costo) y el objetivo de un recubrimiento fotocurable de tioles, transparente y flexible, con vida de anaquel adecuada.</p>
     </article>
     <article class="card" data-cat="materiales procesos">
+      <svg class="ico" aria-hidden="true"><use href="#i-materiales"/></svg>
       <h3>Nanocompuestos Fe₃O₄:TiO₂ para degradación de colorantes</h3>
       <p class="when">mar – may 2024</p>
       <p>Reto con CARBOMEX Nanomateriales: nanoflores de magnetita y nanocompuestos para degradación Fenton y foto-Fenton de colorantes en agua, con UV-Vis, XRD, SEM/EDS y Raman, modelado de costos y pitch deck al socio formador. Se concluyó que faltan TEM/EDS y FTIR para verificar la estructura core-shell.</p>
       <div class="metric">~52.87 % de degradación de Rodamina B en 40 min</div>
     </article>
     <article class="card" data-cat="sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-sensores"/></svg>
       <h3>Placa base para sensor SPR con nanopartículas de oro</h3>
       <p class="when">feb – mar 2024</p>
       <p>Superficie activa para una plataforma SPR de troponina cardiaca, con película de aluminio por sputtering DC y nanopartículas de oro por drop-casting, caracterizadas por UV-Vis, AFM y SEM. El aluminio quedó uniforme; las nanopartículas formaron agregados, y se recomendó spin-coating. Colaboración con COLAB IBERO.</p>
     </article>
     <article class="card" data-cat="nanomedicina sensores">
+      <svg class="ico" aria-hidden="true"><use href="#i-nanomedicina"/></svg>
       <h3>Diagnóstico molecular de cáncer cervicouterino por VPH</h3>
       <p class="when">sep 2023 · proyecto individual</p>
       <p>Estudio comparativo de PCR convencional y en tiempo real, RT-PCR, Captura de Híbridos 2, genotipificación Linear Array, ELISA, Western blot y biomarcadores, con énfasis en la relevancia para mujeres en México.</p>
     </article>
     <article class="card" data-cat="materiales nanomedicina">
+      <svg class="ico" aria-hidden="true"><use href="#i-materiales"/></svg>
       <h3>Fucoxantina–liposoma–MgO para conservación de alimentos</h3>
       <p class="when">nov – dic 2023</p>
       <p>Revalorización del sargazo como fuente de un conservador natural: fucoxantina encapsulada en liposomas junto con nanopartículas de MgO para extender la vida útil de alimentos ricos en lípidos.</p>
