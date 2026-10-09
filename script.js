@@ -22,9 +22,9 @@
     var cats=(card.getAttribute('data-cat')||'').split(' ').filter(Boolean);
     var html=(ico?ico.outerHTML:'')+'<h3 id="detalle-titulo">'+h.innerHTML+'</h3><p class="when">'+w.innerHTML+'</p><p class="full">'+p.innerHTML+'</p>';
     var sk=(card.getAttribute('data-skills')||'').split('|').filter(Boolean);
-    if(sk.length) html+='<h4 class="sk-t">Habilidades</h4><ul class="sk">'+sk.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>';
+    if(sk.length) html+='<h4 class="sk-t">Habilidades</h4><div class="chips sk">'+sk.map(function(x){return '<span class="chip">'+x+'</span>'}).join('')+'</div>';
     if(m) html+='<div class="metric">'+m.innerHTML+'</div>';
-    html+='<div class="chips">'+cats.map(function(c){return '<span class="chip">'+(labels[c]||c)+'</span>'}).join('')+'</div>';
+    html+='<p class="area">Área: '+cats.map(function(c){return labels[c]||c}).join(' · ')+'</p>';
     body.innerHTML=html;
     if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','')}
   }
